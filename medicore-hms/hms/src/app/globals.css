@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design tokens — "Clinical Calm"
+  A hospital dashboard used for hours a day should not shout. Deep teal
+  (trust, medical tradition) as the primary, a warm amber reserved only for
+  alerts/low-stock/urgent states, and a near-white paper background instead
+  of stark white to reduce eye strain on long shifts.
+*/
+:root {
+  --background: 210 20% 98%;
+  --foreground: 200 35% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 200 35% 12%;
+  --primary: 187 65% 24%;          /* deep teal */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 187 30% 94%;
+  --secondary-foreground: 187 65% 20%;
+  --muted: 210 16% 93%;
+  --muted-foreground: 210 10% 45%;
+  --accent: 35 90% 55%;            /* amber — reserved for alerts/status */
+  --accent-foreground: 30 40% 15%;
+  --destructive: 4 75% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 210 16% 88%;
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: 200 35% 7%;
+  --foreground: 210 20% 96%;
+  --card: 200 30% 10%;
+  --card-foreground: 210 20% 96%;
+  --primary: 187 55% 55%;
+  --primary-foreground: 200 35% 8%;
+  --secondary: 200 25% 15%;
+  --secondary-foreground: 210 20% 90%;
+  --muted: 200 20% 16%;
+  --muted-foreground: 210 10% 65%;
+  --accent: 35 85% 60%;
+  --accent-foreground: 30 40% 12%;
+  --destructive: 4 70% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 200 20% 20%;
+}
+
+* { @apply border-border; }
+body { @apply bg-background text-foreground antialiased; font-feature-settings: "cv11", "ss01"; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
